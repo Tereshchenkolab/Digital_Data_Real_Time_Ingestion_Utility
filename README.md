@@ -25,7 +25,7 @@ Accurate and timely metadata collection is critical for longitudinal clinical re
 Manual data entry often leads to inconsistencies and omissions.  
 This utility addresses those gaps by integrating **real-time folder monitoring** and **controlled user input dialogs**, ensuring all digital recordings are synchronized with validated metadata at the moment of creation.
 
-Developed within the **Cleveland Clinic** research environment, the system adheres to recognized data quality principles:
+Developed within the **Institution** research environment, the system adheres to recognized data quality principles:
 **completeness, consistency, integrity, and audit traceability.**
 
 ---
