@@ -4,7 +4,7 @@ a database with real-time ingestion utility for reliable digital signal data col
 **Version:** 1.0  
 **Authors:** Shivangi Kewalramani, Hayden Caldwell, Larisa Tereshchenko  
 **Institution:** Cleveland Clinic Main Campus  
-**License:** MIT
+**License:** This project will be distributed under the license selected on the PhysioNet publication platform.
 
 ---
 ## Overview
