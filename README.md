@@ -59,7 +59,7 @@ CREATE TABLE ds_ecg_t1 (
     study_date TIMESTAMP(6) DEFAULT SYSTIMESTAMP NOT NULL,
     usr_info   VARCHAR2(64)
 );
-
+```
 ---
 
 ## Repository File List
