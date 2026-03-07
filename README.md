@@ -59,3 +59,12 @@ CREATE TABLE ds_ecg_t1 (
     study_date TIMESTAMP(6) DEFAULT SYSTIMESTAMP NOT NULL,
     usr_info   VARCHAR2(64)
 );
+
+---
+
+## Repository File List
+- `DB-GitHub.py` — Main Python application for folder monitoring, GUI metadata entry, and Oracle database insertion.
+- `DB_entry-GH.bat` — Windows batch launcher that opens the monitored folder and starts the Python application.
+- `README.md` — Project overview, installation instructions, configuration details, usage workflow, and troubleshooting notes.
+- `requirements.txt` — Python package dependencies and versions required to run the software.
+
