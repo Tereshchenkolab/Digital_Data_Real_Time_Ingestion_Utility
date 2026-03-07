@@ -40,7 +40,29 @@ Developed within the **Institution** research environment, the system adheres to
 | **Database Driver** | `oracledb` (thin mode, no Oracle client installation required) |
 
 ---
+## Getting Started
+1.	Install Python 3.10 or later.
+2.	Clone or download this repository.
+3.	Install dependencies:
+```bash
+        pip install -r requirements.txt
+```
+4.	Open DB-GitHub.py and set the following configuration values:
+DB_USERNAME
+       DB_PASSWORD
+       DB_HOST
+       DB_SERVICENAME
+       BASE_FOLDER
+5.	Ensure the Oracle target table exists and that your user has INSERT privileges.
+6.	Run the launcher:
+Double-click DB_entry-GH.bat, or
+Run python DB-GitHub.py
+7.	A new watch folder will be created automatically inside BASE_FOLDER.
+8.	Place a physiological signal file into the generated folder.
+9.	Complete the metadata form when prompted.
+10.	Verify successful insertion in the console output
 
+---
 ###  Database Schema
 
 ```sql
