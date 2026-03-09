@@ -14,7 +14,7 @@ The **Digital Data Real-Time Ingestion Utility** is a Python-based application d
 The tool integrates:
 - **File Monitoring:** Automated detection of new files in a watched directory  
 - **GUI Interface:** Research-assistant-friendly metadata input (patient demographics and history)  
-- **Database Insertion:** Secure, traceable data entry using Oracle thin-mode connectivity
+- **Database Insertion:** Secure, traceable data entry using Oracle thin-mode connectivity  
 This ensures that each physiological recording is accurately paired with metadata, **improving traceability, reproducibility, and compliance** with institutional data integrity standards.
 
 ---
