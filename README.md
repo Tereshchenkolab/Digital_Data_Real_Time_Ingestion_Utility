@@ -90,7 +90,7 @@ tk.Label(self, text="Enter the patient's first and last name:").pack(padx=10, pa
 self.name_entry = tk.Entry(self)
 self.name_entry.pack(padx=10, pady=5)
 ```
-Each user input must be mapped to a dialog result variable inside the `on_ok()` function. This is accomplished by calling the appropriate getter method for the input widget.
+Each user input must be mapped to a dialog result variable inside the `on_ok()` function. This is accomplished by calling the appropriate getter method for the input widget.  
 Example mapping:
 ```python
 'name': self.name_entry.get(),
