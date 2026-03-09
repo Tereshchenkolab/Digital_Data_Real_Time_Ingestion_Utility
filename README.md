@@ -98,7 +98,7 @@ Example mapping:
 This syntax remains the same regardless of the type of input widget used.
 
 ### Declaring Global Variables
-Inside the `prompt_user()` function, declare global variables for each dialog result. These variables must be global so they can be accessed later by the SQL insertion statement.
+Inside the `prompt_user()` function, declare global variables for each dialog result. These variables must be global so they can be accessed later by the SQL insertion statement.  
 Example:
 ```python
 global user_name
@@ -110,13 +110,13 @@ After establishing a connection to the Oracle database instance, insert the coll
 In the SQL statement:
 1. Specify the table name.
 2. List the database column names inside the first set of parentheses.
-3. Provide corresponding variable values in the `VALUES` section.
+3. Provide corresponding variable values in the `VALUES` section.  
 Example:
 ```sql
 INSERT INTO ds_ecg_t1 (name, mrn, dob, age, sex, study_date)
 VALUES (:name, :mrn, :dob, :age, :sex, SYSTIMESTAMP)
 ```
-Each SQL parameter must correspond to a previously defined variable, typically mapped from global variables created in `prompt_user()`.
+Each SQL parameter must correspond to a previously defined variable, typically mapped from global variables created in `prompt_user()`.  
 Example variable mapping:
 ```python
 'name': user_name
@@ -137,7 +137,7 @@ pip install -r requirements.txt
 4.	Open DB-GitHub.py and set the following configuration values:
 DB_USERNAME, DB_PASSWORD, DB_HOST, DB_SERVICENAME, BASE_FOLDER
 5.	Ensure the Oracle target table exists and that your user has INSERT privileges.
-6.	Run the launcher:
+6.	Run the launcher:  
 Double-click `DB_entry-GH.bat`, or run:
 ```bash
 python DB-GitHub.py
@@ -161,7 +161,7 @@ The typical workflow for using the Digital Data Real-Time Ingestion Utility is a
    - Associates the signal file with the entered metadata
    - Generates a new study identifier
    - Inserts the metadata and file reference into the Oracle database.
-6. The database insertion status is displayed in the console output, confirming successful ingestion.
+6. The database insertion status is displayed in the console output, confirming successful ingestion.  
 
 This workflow ensures that physiological signal recordings are immediately paired with validated metadata, improving traceability and data integrity for clinical research studies.
 
