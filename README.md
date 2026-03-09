@@ -127,7 +127,7 @@ After completing these configuration steps, the script will be ready to connect 
 2.	Clone or download this repository.
 3.	Install dependencies:
 ```bash
-        pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 4.	Open DB-GitHub.py and set the following configuration values:
 DB_USERNAME, DB_PASSWORD, DB_HOST, DB_SERVICENAME, BASE_FOLDER
