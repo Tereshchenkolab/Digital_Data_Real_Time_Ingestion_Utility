@@ -105,7 +105,7 @@ user_name = dialog.result['name']
 ```
 
 ### Inserting User Inputs into the Database
-After establishing a connection to the Oracle database instance, insert the collected metadata into the target table using an `INSERT INTO` SQL command.
+After establishing a connection to the Oracle database instance, insert the collected metadata into the target table using an `INSERT INTO` SQL command.  
 In the SQL statement:
 1. Specify the table name.
 2. List the database column names inside the first set of parentheses.
