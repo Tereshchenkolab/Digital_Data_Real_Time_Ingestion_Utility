@@ -117,7 +117,9 @@ Example variable mapping:
 ```python
 'name': user_name
 ```
+
 After completing these configuration steps, the script will be ready to connect to the Oracle database and ingest physiological signal metadata in real time.
+
 ---
 
 ## Getting Started
@@ -141,9 +143,6 @@ python DB-GitHub.py
 10.	Verify successful insertion in the console output
 
 ---
-## Usage Workflow
----
-
 ## Usage Workflow
 
 The typical workflow for using the Digital Data Real-Time Ingestion Utility is as follows:
