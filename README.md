@@ -101,7 +101,8 @@ Update the following configuration variables in `DB-GitHub.py` to establish a co
 | `DB_HOST`        | Host address of the Oracle database server                              |
 | `DB_SERVICENAME` | Oracle service name for the database                                    |
 | `BASE_FOLDER`    | Base directory where data-entry folders will be automatically generated |
-**Note:**
+
+Note:
 If your database uses an **SID instead of a service name**, modify the connection call in `oracledb.connect()` by replacing the `service_name` parameter with `dsn`.
 
 ### Matching and Mapping Variables
