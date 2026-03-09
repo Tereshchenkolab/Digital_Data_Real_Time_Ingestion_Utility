@@ -63,7 +63,7 @@ Run python DB-GitHub.py
 10.	Verify successful insertion in the console output
 
 ---
-###  Database Schema
+##  Database Schema
 
 ```sql
 CREATE TABLE ds_ecg_t1 (
@@ -82,8 +82,67 @@ CREATE TABLE ds_ecg_t1 (
     usr_info   VARCHAR2(64)
 );
 ```
+
+
 ---
 
+## Configuration
+
+The database schema `ds_ecg_t1` represents our laboratory’s system for storing the necessary information required for our study. However, this schema can easily be adapted to serve any requested database layout, provided that the database is hosted within an **Oracle Database server or instance**.
+
+After creating your database schema in Oracle Database, several configuration steps must be performed in the `DB-GitHub.py` script to connect the ingestion utility to your database and correctly map user input variables.
+
+### Connecting to Your Database
+Update the following configuration variables in `DB-GitHub.py` to establish a connection to your Oracle database:
+| Variable         | Description                                                             |
+| ---------------- | ----------------------------------------------------------------------- |
+| `DB_USERNAME`    | Username used to access the Oracle database                             |
+| `DB_PASSWORD`    | Password associated with the database account                           |
+| `DB_HOST`        | Host address of the Oracle database server                              |
+| `DB_SERVICENAME` | Oracle service name for the database                                    |
+| `BASE_FOLDER`    | Base directory where data-entry folders will be automatically generated |
+**Note:**
+If your database uses an **SID instead of a service name**, modify the connection call in `oracledb.connect()` by replacing the `service_name` parameter with `dsn`.
+
+### Matching and Mapping Variables
+The metadata collection interface is built using **Tkinter GUI elements**. Each input field is defined using a `tk.Label` statement followed by an input widget (e.g., text entry field, dropdown menu, or other input type).
+Example GUI input definition:
+```python
+tk.Label(self, text="Enter the patient's first and last name:").pack(padx=10, pady=5)
+self.name_entry = tk.Entry(self)
+self.name_entry.pack(padx=10, pady=5)
+```
+Each user input must be mapped to a dialog result variable inside the `on_ok()` function. This is accomplished by calling the appropriate getter method for the input widget.
+Example mapping:
+```python
+'name': self.name_entry.get(),
+```
+This syntax remains the same regardless of the type of input widget used.
+### Declaring Global Variables
+Inside the `prompt_user()` function, declare global variables for each dialog result. These variables must be global so they can be accessed later by the SQL insertion statement.
+Example:
+```python
+global user_name
+user_name = dialog.result['name']
+```
+### Inserting User Inputs into the Database
+After establishing a connection to the Oracle database instance, insert the collected metadata into the target table using an `INSERT INTO` SQL command.
+In the SQL statement:
+1. Specify the table name.
+2. List the database column names inside the first set of parentheses.
+3. Provide corresponding variable values in the `VALUES` section.
+Example:
+```sql
+INSERT INTO ds_ecg_t1 (name, mrn, dob, age, sex, study_date)
+VALUES (:name, :mrn, :dob, :age, :sex, SYSTIMESTAMP)
+```
+Each SQL parameter must correspond to a previously defined variable, typically mapped from global variables created in `prompt_user()`.
+Example variable mapping:
+```python
+'name': user_name
+```
+After completing these configuration steps, the script should be fully prepared to **connect to your Oracle Database instance and ingest physiological signal metadata in real time**.
+---
 ## Repository File List
 - `DB-GitHub.py` — Main Python application for folder monitoring, GUI metadata entry, and Oracle database insertion.
 - `DB_entry-GH.bat` — Windows batch launcher that opens the monitored folder and starts the Python application.
