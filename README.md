@@ -78,7 +78,7 @@ Update the following configuration variables in `DB-GitHub.py` to establish a co
 
 **Note:**
 If your database uses an SID instead of a service name, modify the connection call in `oracledb.connect()` by replacing the `service_name` parameter with `dsn`.
-For production or institutional use, credentials should not be hard-coded. Instead, users should provide them through environment variables or a protected. env-style configuration mechanism and load them securely at runtime.
+For production or institutional use, credentials should not be hard-coded. Instead, users should provide them through environment variables or a protected `.env`-style configuration mechanism and load them securely at runtime.
 
 ### Matching and Mapping Variables
 The metadata collection interface is built using Tkinter GUI elements. Each input field is defined using a `tk.Label` statement followed by an input widget (e.g., text entry field, dropdown menu, or other input type).
