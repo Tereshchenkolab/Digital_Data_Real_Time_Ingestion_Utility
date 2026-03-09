@@ -78,7 +78,7 @@ Update the following configuration variables in `DB-GitHub.py` to establish a co
 | `BASE_FOLDER`    | Base directory where data-entry folders will be automatically generated |
 
 **Note:**
-If your database uses an SID instead of a service name, modify the connection call in `oracledb.connect()` by replacing the `service_name` parameter with `dsn`.
+If your database uses an SID instead of a service name, modify the connection call in `oracledb.connect()` by replacing the `service_name` parameter with `dsn`.  
 For production or institutional use, credentials should not be hard-coded. Instead, users should provide them through environment variables or a protected `.env`-style configuration mechanism and load them securely at runtime.
 
 ### Matching and Mapping Variables
