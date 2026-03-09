@@ -1,10 +1,10 @@
 # Digital Data Real-Time Ingestion Utility
 A database utility for reliable real-time ingestion of digital physiological signal data
 
-**Version:** 1.0.0 
+**Version:** 1.0.0  
 **Authors:** Shivangi Kewalramani, Hayden Caldwell, Larisa Tereshchenko  
 **Institution:** Cleveland Clinic Main Campus  
-**License:** This project will be distributed under the license selected on the PhysioNet publication platform.
+**License:** This project will be distributed under the license selected on the PhysioNet publication platform.  
 
 ---
 ## Overview
