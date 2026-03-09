@@ -1,5 +1,5 @@
-# Digital_Data_Real_Time_Ingestion_Utility
-a database with real-time ingestion utility for reliable digital signal data collection 
+# Digital Data Real-Time Ingestion Utility
+A database utility for reliable real-time ingestion of digital physiological signal data
 
 **Version:** 1.0  
 **Authors:** Shivangi Kewalramani, Hayden Caldwell, Larisa Tereshchenko  
@@ -25,7 +25,7 @@ Accurate and timely metadata collection is critical for longitudinal clinical re
 Manual data entry often leads to inconsistencies and omissions.  
 This utility addresses those gaps by integrating **real-time folder monitoring** and **controlled user input dialogs**, ensuring all digital recordings are synchronized with validated metadata at the moment of creation.
 
-Developed within the **Institution** research environment, the system adheres to recognized data quality principles:
+Developed within the **Cleveland Clinic** research environment, the system adheres to recognized data quality principles:
 **completeness, consistency, integrity, and audit traceability.**
 
 ---
@@ -40,26 +40,8 @@ Developed within the **Institution** research environment, the system adheres to
 | **Database Driver** | `oracledb` (thin mode, no Oracle client installation required) |
 
 ---
-## Getting Started
-1.	Install Python 3.10 or later.
-2.	Clone or download this repository.
-3.	Install dependencies:
-```bash
-        pip install -r requirements.txt
-```
-4.	Open DB-GitHub.py and set the following configuration values:
-DB_USERNAME, DB_PASSWORD, DB_HOST, DB_SERVICENAME, BASE_FOLDER
-5.	Ensure the Oracle target table exists and that your user has INSERT privileges.
-6.	Run the launcher:
-Double-click DB_entry-GH.bat, or
-Run python DB-GitHub.py
-7.	A new watch folder will be created automatically inside BASE_FOLDER.
-8.	Place a physiological signal file into the generated folder.
-9.	Complete the metadata form when prompted.
-10.	Verify successful insertion in the console output
 
----
-##  Database Schema
+## Database Schema
 
 ```sql
 CREATE TABLE ds_ecg_t1 (
@@ -78,8 +60,6 @@ CREATE TABLE ds_ecg_t1 (
     usr_info   VARCHAR2(64)
 );
 ```
-
-
 ---
 
 ## Configuration
@@ -137,8 +117,56 @@ Example variable mapping:
 ```python
 'name': user_name
 ```
-After completing these configuration steps, the script should be fully prepared to connect to your Oracle Database instance and ingest physiological signal metadata in real time.
+After completing these configuration steps, the script will be ready to connect to the Oracle database and ingest physiological signal metadata in real time.
 ---
+
+## Getting Started
+1.	Install Python 3.10 or later.
+2.	Clone or download this repository.
+3.	Install dependencies:
+```bash
+        pip install -r requirements.txt
+```
+4.	Open DB-GitHub.py and set the following configuration values:
+DB_USERNAME, DB_PASSWORD, DB_HOST, DB_SERVICENAME, BASE_FOLDER
+5.	Ensure the Oracle target table exists and that your user has INSERT privileges.
+6.	Run the launcher:
+Double-click `DB_entry-GH.bat`, or run:
+```bash
+python DB-GitHub.py
+```
+7.	A new watch folder will be created automatically inside BASE_FOLDER.
+8.	Place a physiological signal file into the generated folder.
+9.	Complete the metadata form when prompted.
+10.	Verify successful insertion in the console output
+
+---
+## Usage Workflow
+---
+
+## Usage Workflow
+
+The typical workflow for using the Digital Data Real-Time Ingestion Utility is as follows:
+
+1. Start the ingestion utility by running `DB_entry-GH.bat` or executing `python DB-GitHub.py`.
+
+2. The application automatically creates a **watch folder** inside the directory specified by `BASE_FOLDER`.
+
+3. The system continuously monitors this folder for newly added physiological signal files.
+
+4. When a new signal file is detected, a **GUI metadata entry dialog** appears prompting the research assistant to enter patient and study information.
+
+5. After the metadata form is completed and submitted, the application:
+   - Associates the signal file with the entered metadata
+   - Generates a new study identifier
+   - Inserts the metadata and file reference into the Oracle database.
+
+6. The database insertion status is displayed in the console output, confirming successful ingestion.
+
+This workflow ensures that physiological signal recordings are immediately paired with validated metadata, improving traceability and data integrity for clinical research studies.
+
+---
+
 ## Repository File List
 - `DB-GitHub.py` — Main Python application for folder monitoring, GUI metadata entry, and Oracle database insertion.
 - `DB_entry-GH.bat` — Windows batch launcher that opens the monitored folder and starts the Python application.
