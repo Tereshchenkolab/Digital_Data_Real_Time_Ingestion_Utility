@@ -48,11 +48,7 @@ Developed within the **Institution** research environment, the system adheres to
         pip install -r requirements.txt
 ```
 4.	Open DB-GitHub.py and set the following configuration values:
-DB_USERNAME
-       DB_PASSWORD
-       DB_HOST
-       DB_SERVICENAME
-       BASE_FOLDER
+DB_USERNAME, DB_PASSWORD, DB_HOST, DB_SERVICENAME, BASE_FOLDER
 5.	Ensure the Oracle target table exists and that your user has INSERT privileges.
 6.	Run the launcher:
 Double-click DB_entry-GH.bat, or
@@ -87,9 +83,7 @@ CREATE TABLE ds_ecg_t1 (
 ---
 
 ## Configuration
-
 The database schema `ds_ecg_t1` represents our laboratory’s system for storing the necessary information required for our study. However, this schema can easily be adapted to serve any requested database layout, provided that the database is hosted within an **Oracle Database server or instance**.
-
 After creating your database schema in Oracle Database, several configuration steps must be performed in the `DB-GitHub.py` script to connect the ingestion utility to your database and correctly map user input variables.
 
 ### Connecting to Your Database
@@ -103,10 +97,10 @@ Update the following configuration variables in `DB-GitHub.py` to establish a co
 | `BASE_FOLDER`    | Base directory where data-entry folders will be automatically generated |
 
 Note:
-If your database uses an **SID instead of a service name**, modify the connection call in `oracledb.connect()` by replacing the `service_name` parameter with `dsn`.
+If your database uses an SID instead of a service name, modify the connection call in `oracledb.connect()` by replacing the `service_name` parameter with `dsn`.
 
 ### Matching and Mapping Variables
-The metadata collection interface is built using **Tkinter GUI elements**. Each input field is defined using a `tk.Label` statement followed by an input widget (e.g., text entry field, dropdown menu, or other input type).
+The metadata collection interface is built using Tkinter GUI elements. Each input field is defined using a `tk.Label` statement followed by an input widget (e.g., text entry field, dropdown menu, or other input type).
 Example GUI input definition:
 ```python
 tk.Label(self, text="Enter the patient's first and last name:").pack(padx=10, pady=5)
@@ -142,11 +136,11 @@ Example variable mapping:
 ```python
 'name': user_name
 ```
-After completing these configuration steps, the script should be fully prepared to **connect to your Oracle Database instance and ingest physiological signal metadata in real time**.
+After completing these configuration steps, the script should be fully prepared to connect to your Oracle Database instance and ingest physiological signal metadata in real time.
 ---
 ## Repository File List
 - `DB-GitHub.py` — Main Python application for folder monitoring, GUI metadata entry, and Oracle database insertion.
 - `DB_entry-GH.bat` — Windows batch launcher that opens the monitored folder and starts the Python application.
 - `README.md` — Project overview, installation instructions, configuration details, usage workflow, and troubleshooting notes.
 - `requirements.txt` — Python package dependencies and versions required to run the software.
-
+---
