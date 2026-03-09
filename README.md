@@ -83,7 +83,7 @@ If your database uses an SID instead of a service name, modify the connection ca
 For production or institutional use, credentials should not be hard-coded. Instead, users should provide them through environment variables or a protected `.env`-style configuration mechanism and load them securely at runtime.
 
 ### Matching and Mapping Variables
-The metadata collection interface is built using **Tkinter GUI** elements. Each input field is defined using a `tk.Label` statement followed by an input widget (e.g., text entry field, dropdown menu, or other input type).
+The metadata collection interface is built using **Tkinter GUI** elements. Each input field is defined using a `tk.Label` statement followed by an input widget (e.g., text entry field, dropdown menu, or other input type).  
 Example GUI input definition:
 ```python
 tk.Label(self, text="Enter the patient's first and last name:").pack(padx=10, pady=5)
